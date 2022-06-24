@@ -32,13 +32,12 @@ along with Maplespace WordPress Plugin. If not, see https://github.com/joshuargu
 
 defined( 'ABSPATH' ) or die( '::NO INDIRECT ACCESS ALLOWED::' );
 
-require_once 'admin/maplespace_worpress_plugin_activation.php';
+require_once 'settings_sections/maplespace_wordpress_plugin_settings_page_content.php';
 
-require_once 'admin/maplespace_worpress_plugin_enqueue.php';
+require_once 'admin/maplespace_wordpress_plugin_activation.php';
+
+require_once 'admin/maplespace_wordpress_plugin_enqueue.php';
+
+require_once 'admin/maplespace_wordpress_plugin_cron.php';
 
 require_once 'admin/options.php';
-
-require_once 'settings_sections/settings_page_content.php';
-
-
-

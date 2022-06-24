@@ -1,10 +1,16 @@
+#maplespace_wordpress_plugin-page
+{
+    text-align: center !important;
+    margin: 0 auto;
+}
+
 .maplespace_wordpress_plugin-settings-page-section
 {
     position: relative;
     border: 1px inset #6a6a6a;
     background-color: #fafaff;
     box-shadow: 0 2px 0 #ff3300;
-    border-radius: 3px;
+    border-radius: 7px;
     text-align:center;
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
@@ -13,12 +19,12 @@
     overflow-x: hidden;
     overflow-y: auto;
     min-width: 330px;
-    max-width: 330px;
+    max-width: 100%;
     box-sizing: border-box;
     float: left;
     margin: 15px 15px 15px auto;
-    max-height:340px !important;
-    min-height:340px !important;
+    max-height:250px !important;
+    min-height:250px !important;
     padding-top: 15px;
 }
 
@@ -29,26 +35,55 @@
 
 .maplespace_wordpress_plugin-settings-page-section-header
 {
-    font-weight: 700 !important;
-    text-shadow: 1px 1px 1px rgb(189, 187, 187);
+    font-weight: 400 !important;
+    color: #1b1b1b;
+    text-shadow: 1px 0px 0px #000;
     width:100%;
+}
+
+#maplespace_wordpress_plugin-google
+{
+    color:#EA4335;
+}
+
+#maplespace_wordpress_plugin-google-calendar
+{
+    color:	#4285F4;
+}
+
+#maplespace_wordpress_plugin-trello
+{
+    color: #0065ff;
 }
 
 .maplespace_wordpress_plugin-settings-page-section-subheader
 {
     position:relative;
-    text-shadow: 1px 0px 3px lightgray;
-    color: black;
+    color: #313539;
+}
+
+.maplespace_wordpress_plugin-settings-page-section-apikey
+{
+    -webkit-user-select: text; /* Safari */        
+    -moz-user-select: text; /* Firefox */
+    -ms-user-select: text; /* IE10+/Edge */
+    user-select: text; /* Standard */
+}
+
+.maplespace_wordpress_plugin-new-apikey-label
+{
+    font-weight: 500 !important;
 }
 
 .maplespace_wordpress_plugin-button
 {
-    background-color: #ff3300 !important;
+    background-color: #002060 !important;
     text-shadow: 1px 1px 1px #002060 !important;
     color: white !important;
-    border: 1px inset #ff3300 !important;
-    margin-top:0; 
-    box-shadow: 8px 8px 14px gray, 0 0 5px black;
+    border: 1px inset #103070 !important;
+    border-radius: 50em !important;
+    margin: 0.375rem;
+    box-shadow: 1px 1px 1px gray, 0 0 5px black;
     width: auto;
     min-width:150px;
     max-width:150px;
@@ -58,10 +93,10 @@
 
 .maplespace_wordpress_plugin-button:hover
 {
-    background-color: #ff3300 !important;
+    opacity: 0.85;
     text-shadow: 1px 1px 1px #002060 !important;
     border: 1px inset #4d4d4d !important;
-    box-shadow: 4px 4px 7px gray, 0 0 2px black;
+    box-shadow: 1px 1px 0px gray, 0 0 2px black;
 }
 
 .maplespace_wordpress_plugin-warning
