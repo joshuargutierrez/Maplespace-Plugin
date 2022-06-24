@@ -1,0 +1,72 @@
+.maplespace_wordpress_plugin-settings-page-section
+{
+    position: relative;
+    border: 1px inset #6a6a6a;
+    background-color: #fafaff;
+    box-shadow: 0 2px 0 #ff3300;
+    border-radius: 3px;
+    text-align:center;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-width: 330px;
+    max-width: 330px;
+    box-sizing: border-box;
+    float: left;
+    margin: 15px 15px 15px auto;
+    max-height:340px !important;
+    min-height:340px !important;
+    padding-top: 15px;
+}
+
+.maplespace_wordpress_plugin_form
+{
+    display: visible;
+}
+
+.maplespace_wordpress_plugin-settings-page-section-header
+{
+    font-weight: 700 !important;
+    text-shadow: 1px 1px 1px rgb(189, 187, 187);
+    width:100%;
+}
+
+.maplespace_wordpress_plugin-settings-page-section-subheader
+{
+    position:relative;
+    text-shadow: 1px 0px 3px lightgray;
+    color: black;
+}
+
+.maplespace_wordpress_plugin-button
+{
+    background-color: #ff3300 !important;
+    text-shadow: 1px 1px 1px #002060 !important;
+    color: white !important;
+    border: 1px inset #ff3300 !important;
+    margin-top:0; 
+    box-shadow: 8px 8px 14px gray, 0 0 5px black;
+    width: auto;
+    min-width:150px;
+    max-width:150px;
+    margin-top: 33px !important;
+    margin-left: 0% !important;
+}
+
+.maplespace_wordpress_plugin-button:hover
+{
+    background-color: #ff3300 !important;
+    text-shadow: 1px 1px 1px #002060 !important;
+    border: 1px inset #4d4d4d !important;
+    box-shadow: 4px 4px 7px gray, 0 0 2px black;
+}
+
+.maplespace_wordpress_plugin-warning
+{
+    color: #ff3300 !important;
+    text-shadow: 1px 1px 1px #000;
+    white-space: nowrap;
+}
