@@ -21,7 +21,27 @@ function maplespace_register_admin_menu()
 function settings_page_content()
 {
     echo '<div class="wrap" id="maplespace_wordpress_plugin-page">'; 
+        if( get_option( 'maplespace_wordpress_plugin_google_apikey' ) === '' 
+            || get_option( 'maplespace_wordpress_plugin_trello_apikey' ) === '' 
+            || get_option( 'maplespace_wordpress_plugin_email_address' ) === '')
+        {
+            // Description Section
+            echo '<div class="maplespace_wordpress_plugin-settings-page-section" title="Enter your OTHERAPI API Key." >'; // START Admin section
 
+            include 'maplespace_wordpress_plugin_description.php';
+
+            echo '</div>'; 
+            // END Description Section
+        }
+
+        // Email Address  Section
+        echo '<div class="maplespace_wordpress_plugin-settings-page-section" title="Enter your OTHERAPI API Key." >'; // START Admin section
+
+        include 'maplespace_wordpress_plugin_enter_email_address.php';
+
+        echo '</div>'; 
+        // END Email Address Section
+        
         // Google API Section
         echo '<div class="maplespace_wordpress_plugin-settings-page-section" title="Enter your Google API Key." >'; // START Admin section
 
@@ -37,16 +57,6 @@ function settings_page_content()
 
         echo '</div>'; 
         // END Trello API Section
-
-        
-        // Other API Section
-        // echo '<div class="maplespace_wordpress_plugin-settings-page-section" title="Enter your OTHERAPI API Key." >'; // START Admin section
-
-        // include 'maplespace_wordpress_plugin_enter_OTHERAPI_apikey.php';
-
-        // echo '</div>'; 
-        // END Other API Section
-        
         
     echo '</div>';
 

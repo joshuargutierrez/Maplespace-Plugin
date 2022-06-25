@@ -19,13 +19,13 @@
     overflow-x: hidden;
     overflow-y: auto;
     min-width: 330px;
-    max-width: 100%;
+    max-width: 330px;
     box-sizing: border-box;
     float: left;
     margin: 15px 15px 15px auto;
+    padding: 15px 10px 15px 10px;
     max-height:250px !important;
     min-height:250px !important;
-    padding-top: 15px;
 }
 
 .maplespace_wordpress_plugin_form
@@ -104,4 +104,14 @@
     color: #ff3300 !important;
     text-shadow: 1px 1px 1px #000;
     white-space: nowrap;
+}
+
+#maplespace_wordpress_plugin-instructions
+{
+    text-align: left !important;
+}
+
+.maplespace_wordpress_plugin-instructions-item
+{
+    font-weight: 500 !important;
 }
