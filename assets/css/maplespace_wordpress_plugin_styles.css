@@ -62,12 +62,19 @@
     color: #313539;
 }
 
-.maplespace_wordpress_plugin-settings-page-section-apikey
+.maplespace_wordpress_plugin-settings-page-section-apikey, .maplespace_wordpress_plugin-settings-page-section-trello-secret
 {
+    
     -webkit-user-select: text; /* Safari */        
     -moz-user-select: text; /* Firefox */
     -ms-user-select: text; /* IE10+/Edge */
     user-select: text; /* Standard */
+    overflow:scroll;
+}
+
+.maplespace_wordpress_plugin-settings-page-section-trello-secret
+{
+    font-size: 0.70em !important;
 }
 
 .maplespace_wordpress_plugin-new-apikey-label
@@ -102,8 +109,8 @@
 .maplespace_wordpress_plugin-warning
 {
     color: #ff3300 !important;
-    text-shadow: 1px 1px 1px #000;
     white-space: nowrap;
+    font-size: 1.0em;
 }
 
 #maplespace_wordpress_plugin-instructions

@@ -1,2 +1,2 @@
 # Maplespace Plugin
- WordPress plugin ofr MapleSpace
+ WordPress plugin for MapleSpace

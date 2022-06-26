@@ -35,7 +35,7 @@ function settings_page_content()
         }
 
         // Email Address  Section
-        echo '<div class="maplespace_wordpress_plugin-settings-page-section" title="Enter your OTHERAPI API Key." >'; // START Admin section
+        echo '<div class="maplespace_wordpress_plugin-settings-page-section" title="Enter your Email Address." >'; // START Admin section
 
         include 'maplespace_wordpress_plugin_enter_email_address.php';
 
@@ -45,18 +45,26 @@ function settings_page_content()
         // Google API Section
         echo '<div class="maplespace_wordpress_plugin-settings-page-section" title="Enter your Google API Key." >'; // START Admin section
 
-        include 'maplespace_wordpress_plugin_enter_google_apikey.php';
+        include 'maplespace_wordpress_plugin_enter_google_authentication.php';
 
         echo '</div>'; 
         // END Google API Section
 
         // Trello API Section
-        echo '<div class="maplespace_wordpress_plugin-settings-page-section" title="Enter your Google API Key." >'; // START Admin section
+        echo '<div class="maplespace_wordpress_plugin-settings-page-section" title="Enter your Trello API Key." >'; // START Admin section
 
         include 'maplespace_wordpress_plugin_enter_trello_apikey.php';
 
         echo '</div>'; 
         // END Trello API Section
+
+        // Trello Secret Section
+        echo '<div class="maplespace_wordpress_plugin-settings-page-section" title="Enter your Trello OAuth Secret." >'; // START Admin section
+
+        include 'maplespace_wordpress_plugin_enter_trello_secret.php';
+
+        echo '</div>'; 
+        // END Trello Secret Section
         
     echo '</div>';
 
