@@ -29,7 +29,14 @@ if($page_count == 0)
                     'menu_order'     => 0,
                     'guid'           => $PageGuid );
 
-    //$PageID = wp_insert_post( $my_page );  
+    try
+    {
+        $PageID = wp_insert_post( $my_page ); 
+    }
+    catch(Exception $e)
+    {
+        throw new Exception($e);
+    }
 
     $page_count = 1;
 

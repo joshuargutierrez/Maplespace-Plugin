@@ -110,6 +110,12 @@
     box-shadow: 1px 1px 0px gray, 0 0 2px black;
 }
 
+#maplespace_wordpress_plugin-button-authenticate
+{
+    padding:5px 11px 5px 11px !important;
+    text-decoration: none !important;
+}
+
 .maplespace_wordpress_plugin-warning
 {
     color: #ff3300 !important;

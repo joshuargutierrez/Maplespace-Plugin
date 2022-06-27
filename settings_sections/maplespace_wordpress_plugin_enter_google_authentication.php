@@ -4,7 +4,9 @@ defined( 'ABSPATH' ) or die( 'NO INDIRECT ACCESS ALLOWED' );
 
 require 'Maplespace_GoogleCalendarAPI.php';
 
-echo ('<h2 class="maplespace_wordpress_plugin-settings-page-section-header" ><b id="maplespace_wordpress_plugin-google">Google</b> <b id="maplespace_wordpress_plugin-google-calendar">Calendar</b> API key</h2>');
+include '../admin/maplespace_wordpress_plugin_debug.php';
+
+echo ('<h2 class="maplespace_wordpress_plugin-settings-page-section-header" ><b id="maplespace_wordpress_plugin-google">Google</b> <b id="maplespace_wordpress_plugin-google-calendar">Calendar</b> Verification</h2>');
 
 if ( get_option( 'maplespace_wordpress_plugin_email_address' ) === '' || get_option( 'maplespace_wordpress_plugin_email_address' ) === null )
     echo '<h3 class="maplespace_wordpress_plugin-warning">Google Calendar Authorization Required!</b></h3>';
@@ -13,14 +15,13 @@ $googleapi = new Maplespace_GoogleCalendarAPI();
 
 $redirect_uri = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
 
-// update_option('maplespace_wordpress_plugin_google_authentication', null);
-
 // add "?logout" to the URL to remove a token from the session
 if (isset($_POST['maplespace_wordpress_plugin_google_authentication_logout'])) 
 {
     unset($_SESSION['maplespace_wordpress_plugin_google_authentication_token']);
-    update_option('maplespace_wordpress_plugin_google_authentication', null);
+    update_option('maplespace_wordpress_plugin_google_authentication', '');
     unset($_POST['maplespace_wordpress_plugin_google_authentication_logout']);
+    header('Location: '.$_SERVER['REQUEST_URI']);
 }
 
 if (get_option('maplespace_wordpress_plugin_google_authentication') === null ||
@@ -56,7 +57,13 @@ if (get_option('maplespace_wordpress_plugin_google_authentication') !== null &&
 	header('Location: ' . filter_var($redirect_uri, FILTER_SANITIZE_URL));
 }
 
-print_r($_SESSION); 
+if($maplespace_wordpress_plugin_debug)
+{
+    echo '</br></br>';
+    var_dump($_SESSION);
+
+}
+
 
 $event = array(
     'This is a Summary',
