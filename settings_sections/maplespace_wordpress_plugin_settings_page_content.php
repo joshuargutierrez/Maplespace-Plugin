@@ -10,7 +10,7 @@ function maplespace_register_admin_menu()
         'Maplespace WordPress Plugin', // Page Title
         'MapleSpace',                  // Menu Title
         'manage_options',              // menu capability
-        'plugin-with-admin-menu',      // menu slug
+        'maplespace-wordpress-plugin', // menu slug
         'settings_page_content',       // function to call
         'dashicons-schedule',          // icon for plugin
          21                            // dashboard position

@@ -12,14 +12,18 @@
     box-shadow: 0 2px 0 #ff3300;
     border-radius: 7px;
     text-align:center;
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
-    overflow-x: hidden;
+    /**
+    -webkit-user-select: none; /* Safari         
+    -moz-user-select: none; /* Firefox 
+    -ms-user-select: none; /* IE10+/Edge 
+    user-select: none; /* Standard 
+    **/
     overflow-y: auto;
+    width:900px;
+    /**
     min-width: 330px;
     max-width: 330px;
+    **/
     box-sizing: border-box;
     float: left;
     margin: 15px 15px 15px auto;
