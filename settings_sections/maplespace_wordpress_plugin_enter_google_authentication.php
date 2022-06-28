@@ -43,7 +43,7 @@ if (get_option('maplespace_wordpress_plugin_google_authentication') !== null &&
 {
     $token = $googleapi->$connection->fetchAccessTokenWithAuthCode(get_option('maplespace_wordpress_plugin_google_authentication'));
 
-    update_option( json_decode('maplespace_wordpress_plugin_google_authentication_token'), $token );
+    update_option( 'maplespace_wordpress_plugin_google_authentication_token', $token );
 
     echo '<form method="post" action="#">';
         echo '<input type="hidden" name="maplespace_wordpress_plugin_google_authentication_logout" value="logout">';
