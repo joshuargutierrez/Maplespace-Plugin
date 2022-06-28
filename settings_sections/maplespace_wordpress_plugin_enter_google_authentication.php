@@ -16,7 +16,7 @@ $redirect_uri = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
 // add "?logout" to the URL to remove a token from the session
 if (isset($_POST['maplespace_wordpress_plugin_google_authentication_logout'])) 
 {
-    unset($_SESSION['maplespace_wordpress_plugin_google_authentication_token']);
+    update_option('maplespace_wordpress_plugin_google_authentication_token', '');
     update_option('maplespace_wordpress_plugin_google_authentication', '');
     unset($_POST['maplespace_wordpress_plugin_google_authentication_logout']);
     header('Location: '.$_SERVER['REQUEST_URI']);
@@ -43,20 +43,28 @@ if (get_option('maplespace_wordpress_plugin_google_authentication') !== null &&
 {
     $token = $googleapi->$connection->fetchAccessTokenWithAuthCode(get_option('maplespace_wordpress_plugin_google_authentication'));
 
-    $_SESSION['maplespace_wordpress_plugin_google_authentication_token'] = $token;
+    update_option( json_decode('maplespace_wordpress_plugin_google_authentication_token'), $token );
 
-    ?>
-    <form method="post" action="#">
-        <input type="hidden" name="maplespace_wordpress_plugin_google_authentication_logout" value="logout">
-        <input type="submit" value="Logout" class="maplespace_wordpress_plugin-button">
-    </form>
-    <?php
+    echo '<form method="post" action="#">';
+        echo '<input type="hidden" name="maplespace_wordpress_plugin_google_authentication_logout" value="logout">';
+        echo '<input type="submit" value="Logout" class="maplespace_wordpress_plugin-button">';
+    echo '</form>';
 
-	try{
-        header('Location: ' . filter_var($redirect_uri, FILTER_SANITIZE_URL));
-    } catch(Exception $e){
-        throw new Exception($e);
-    }
+	$event = array(
+        'This is a Summary',
+        '1234 Somewhere evermore',
+        'This is a description',
+        array(
+            'dateTime' => '2023-05-28T09:00:00-07:00',
+            'timeZone' => 'America/Denver',
+        ),
+        array(
+            'dateTime' => '2023-05-29T09:00:00-07:00',
+            'timeZone' => 'America/Denver',
+        )
+    );
+    
+    $eventId = $googleapi->addEvent('primary', $event);
 }
 
 if(get_option('maplespace_wordpress_plugin_debug') === 'true')
@@ -65,21 +73,4 @@ if(get_option('maplespace_wordpress_plugin_debug') === 'true')
     var_dump($_SESSION);
 
 }
-
-
-$event = array(
-    'This is a Summary',
-    '1234 Somewhere evermore',
-    'This is a description',
-    array(
-        'dateTime' => '2023-05-28T09:00:00-07:00',
-        'timeZone' => 'America/Denver',
-    ),
-    array(
-        'dateTime' => '2023-05-29T09:00:00-07:00',
-        'timeZone' => 'America/Denver',
-    )
-);
-
-$eventId = $googleapi->addEvent('primary', $event);
 

@@ -55,15 +55,24 @@ class Maplespace_GoogleCalendarAPI
             //   'dateTime' => '2015-05-28T17:00:00-07:00',
             //   'timeZone' => 'America/Los_Angeles',
             // ),
-          ));
-          
-          if($calendarId == null) $calendarId = 'primary';
+        ));
+        
+        if($calendarId == null) $calendarId = 'primary';
 
-          try
-          {
-                //$event = $this->$connection->events->insert($calendarId, $event);
-          }
-          catch(Exception $e)
+        try
+        {
+            $this->$connection->setAccessToken(json_encode(get_option('maplespace_wordpress_plugin_google_authentication_token')));
+            
+            // Check to see if there was an error.
+            if (array_key_exists('error', json_encode(get_option('maplespace_wordpress_plugin_google_authentication_token')))) {
+                throw new Exception(join(', ', json_encode(get_option('maplespace_wordpress_plugin_google_authentication_token'))));
+            }
+
+            $event = $this->$connection->events->insert($calendarId, $event);
+
+            
+        }
+        catch(Exception $e)
         {
             throw new GoogleCalendarAPIException($e);
         }
@@ -81,7 +90,7 @@ class Maplespace_GoogleCalendarAPI
 
         $client->setAuthConfig( plugin_dir_path( __DIR__ ) . '/settings_sections/client_credentials.json' );
 
-        $client->addScope('https://www.googleapis.com/auth/calendar.events');
+        $client->addScope('https://www.googleapis.com/auth/calendar');
 
         return $client;
     }

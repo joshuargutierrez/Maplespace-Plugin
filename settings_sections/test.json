@@ -1,0 +1,8 @@
+array(1) {
+    ["maplespace_wordpress_plugin_google_authentication_token"] => array(5) {
+        ["access_token"] => string(227)
+        "ya29.A0ARrdaM-o4WqXWY5YZuHkrsvmy8XTMGsCo4nK_kO0ibJEGhtgBSEmao31KB4bnXFJ-JdNSCfTiK8_qEB5BYMSylxCA6uP4xyLe0s25T2ajbRyq_W7FhyvitPtuEOM4G0aRQueWJuGZcwRqqXpGqkgFZAYwmaavgYUNnWUtBVEFTQVRBU0ZRRl91NjFWeXZ1QzZIY05sUDJJRk8xX21KY04zQQ0165" ["expires_in"] => int(3598)["scope"] => string(47)
+        "https://www.googleapis.com/auth/calendar.events" ["token_type"] => string(6)
+        "Bearer" ["created"] => int(1656399006)
+    }
+}
