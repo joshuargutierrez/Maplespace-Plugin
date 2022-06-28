@@ -34,7 +34,7 @@ defined( 'ABSPATH' ) or die( '::NO INDIRECT ACCESS ALLOWED::' );
 
 require_once 'vendor/autoload.php';
 
-require_once 'settings_sections/maplespace_wordpress_plugin_settings_page_content.php';
+require_once 'admin/maplespace_wordpress_plugin_debug.php';
 
 require_once 'admin/maplespace_wordpress_plugin_activation.php';
 
@@ -45,3 +45,5 @@ require_once 'admin/maplespace_wordpress_plugin_cron.php';
 require_once 'admin/options.php';
 
 require_once 'admin/maplespace_wordpress_plugin_redirect_oauth_shortcode.php';
+
+require_once 'settings_sections/maplespace_wordpress_plugin_settings_page_content.php';

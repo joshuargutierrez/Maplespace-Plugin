@@ -4,8 +4,6 @@ defined( 'ABSPATH' ) or die( 'NO INDIRECT ACCESS ALLOWED' );
 
 require 'Maplespace_GoogleCalendarAPI.php';
 
-include '../admin/maplespace_wordpress_plugin_debug.php';
-
 echo ('<h2 class="maplespace_wordpress_plugin-settings-page-section-header" ><b id="maplespace_wordpress_plugin-google">Google</b> <b id="maplespace_wordpress_plugin-google-calendar">Calendar</b> Verification</h2>');
 
 if ( get_option( 'maplespace_wordpress_plugin_email_address' ) === '' || get_option( 'maplespace_wordpress_plugin_email_address' ) === null )
@@ -54,12 +52,16 @@ if (get_option('maplespace_wordpress_plugin_google_authentication') !== null &&
     </form>
     <?php
 
-	header('Location: ' . filter_var($redirect_uri, FILTER_SANITIZE_URL));
+	try{
+        header('Location: ' . filter_var($redirect_uri, FILTER_SANITIZE_URL));
+    } catch(Exception $e){
+        throw new Exception($e);
+    }
 }
 
-if($maplespace_wordpress_plugin_debug)
+if(get_option('maplespace_wordpress_plugin_debug') === 'true')
 {
-    echo '</br></br>';
+    echo '</br></br>$_SESSION =';
     var_dump($_SESSION);
 
 }

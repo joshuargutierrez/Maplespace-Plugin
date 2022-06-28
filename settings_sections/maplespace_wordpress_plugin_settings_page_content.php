@@ -21,6 +21,9 @@ function maplespace_register_admin_menu()
 function settings_page_content()
 {
     echo '<div class="wrap" id="maplespace_wordpress_plugin-page">'; 
+
+    if(get_option('maplespace_wordpress_plugin_debug') === 'true') echo '</br><h3 style="position:fixed; color: #f33809; right:8px; top 25px;">DEBUG MODE ON</h3></br>';
+
         if( get_option( 'maplespace_wordpress_plugin_google_apikey' ) === '' 
             || get_option( 'maplespace_wordpress_plugin_trello_apikey' ) === '' 
             || get_option( 'maplespace_wordpress_plugin_email_address' ) === '')

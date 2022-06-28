@@ -22,6 +22,8 @@ function maplespace_wordpress_plugin_register_api_settings()
     
     register_setting( 'maplespace_wordpress_plugin_google_authentication_group', 'maplespace_wordpress_plugin_google_authentication' );
 
+    register_setting( 'maplespace_wordpress_plugin_debug_group', 'maplespace_wordpress_plugin_debug' );
+
     // Add additional API key registers here maplespace_wordpress_plugin_google_authentication
 
 }
@@ -35,6 +37,8 @@ add_option( 'maplespace_wordpress_plugin_trello_secret' );
 add_option( 'maplespace_wordpress_plugin_email_address' );
 
 add_option( 'maplespace_wordpress_plugin_google_authentication' );
+
+add_option( 'maplespace_wordpress_plugin_debug' );
 
 
  // Add additional API key options here
