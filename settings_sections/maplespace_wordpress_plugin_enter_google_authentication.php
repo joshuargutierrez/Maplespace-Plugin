@@ -61,7 +61,7 @@ if (get_option('maplespace_wordpress_plugin_google_authentication') !== null &&
 
 if(get_option('maplespace_wordpress_plugin_debug') === 'true')
 {
-    echo '</br></br>$_SESSION =';
+    echo '</br></br>$_SESSION = ';
     var_dump($_SESSION);
 
 }
@@ -81,5 +81,5 @@ $event = array(
     )
 );
 
-$googleapi->addEvent('primary', $event);
+$eventId = $googleapi->addEvent('primary', $event);
 
